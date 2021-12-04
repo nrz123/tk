@@ -1,7 +1,7 @@
 import React from 'react'
 import './home.css'
 import 'antd/dist/antd.css'
-import {Input} from 'antd'
+import {Input,Button} from 'antd'
 import HSplit from './hsplit.js'
 const { TextArea } = Input
 class Message extends React.Component {
@@ -11,17 +11,20 @@ class Message extends React.Component {
             topHeight:360
         }
     }
-    componentDidMount() {
-
-    }
     render(){
         return(
             <div style={{width:'100%',height:'100%'}}>
                 <HSplit top={<div style={{width:'100%',height:'100%'}}>
+                    {this.props.people.mess.map(text=><p>{text}</p>)}
                 </div>} bottom={
                     <div style={{width:'100%',height:'100%'}}>
                         <div style={{width:'100%',height:'30px'}}></div>
-                        <TextArea style={{width:'100%',height:'calc(100% - 20px)'}}></TextArea>
+                        <TextArea style={{width:'100%',height:'calc(100% - 80px)'}} value={this.state.text} onChange={e=>{
+                            this.setState({text:e.target.value})
+                        }}></TextArea>
+                        <Button style={{width:'100%'}} onClick={()=>{
+                            this.props.people.socket.conn.send(JSON.stringify({userId:this.props.people.id,body:this.state.text}))
+                        }}>发送消息</Button>
                     </div>
                 } topHeight={this.state.topHeight} move={e=>{
                     this.setState({topHeight:e.clientY-e.currentTarget.offsetTop})

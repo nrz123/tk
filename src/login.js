@@ -45,14 +45,7 @@ export default function Login(props){
                 </Form.Item>
                 <Form.Item>
                     <Button style={{width:"100%"}} onClick={()=>{
-                        PeerId.create().then(id=>{
-                            // console.log(id.toJSON().privKey)
-                            // console.log(Buffer.from(id.toJSON().privKey,'base64'))
-                            // PeerId.createFromPrivKey(id.privKey.bytes).then(id=>{
-                            //     console.log(id.toJSON())
-                            // })
-                            form.setFieldsValue({privKey: id.toJSON().privKey})
-                        })
+                        PeerId.create().then(id=>form.setFieldsValue({privKey: id.toJSON().privKey}))
                     }}>
                         新用户
                     </Button>

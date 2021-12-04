@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter  as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import {ConfigProvider } from 'antd'
 import Login from './login'
 import Home from './home.js'
