@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { BrowserRouter  as Router, Route } from 'react-router-dom'
+import {ConfigProvider } from 'antd'
+import Login from './login'
+import Home from './home.js'
+import zhCN from 'antd/es/locale/zh_CN'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ConfigProvider locale={zhCN}>
+      <Router >
+        <Route exact path="/" component={Login} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/home" component={Home} />
+      </Router>
+    </ConfigProvider>
+  )
 }
-
-export default App;
+export default App

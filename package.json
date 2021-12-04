@@ -6,8 +6,21 @@
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "antd": "^4.17.1",
+    "ipfs-core": "^0.12.2",
+    "it-all": "^1.0.6",
+    "it-pipe": "^1.1.0",
+    "libp2p": "^0.34.0",
+    "libp2p-mplex": "^0.10.4",
+    "libp2p-noise": "^4.0.0",
+    "libp2p-tcp": "^0.17.2",
+    "libp2p-webrtc-star": "^0.25.0",
+    "libp2p-websockets": "^0.16.2",
+    "multiaddr": "^10.0.1",
+    "peer-id": "^0.16.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
@@ -15,7 +28,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "add": "ipfs add -r build",
+    "publish": "ipfs name publish"
   },
   "eslintConfig": {
     "extends": [
